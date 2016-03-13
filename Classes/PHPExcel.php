@@ -40,7 +40,7 @@ class PHPExcel extends PHPExcelBase {
                             $sheet->setCellValue($this->getColumn($col).$record, $text);
                         }
                     }
-                    $this->getActiveSheet()->setTitle(!empty($cell['title']) ? $cell['title'] : "Sheet");
+                    $this->getActiveSheet()->setTitle(!empty($cell['title']) ? $cell['title'] : 'Sheet');
                 }
             }
         }
@@ -53,19 +53,19 @@ class PHPExcel extends PHPExcelBase {
             if ($format == 'S') {
                 $writer->save($this->_path);
                 if ($this->_extension == 'xlsx') {
-                    header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8");
+                    header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8');
                 } else {
-                    header("Content-type: application/vnd.ms-excel; charset=utf-8");
+                    header('Content-type: application/vnd.ms-excel; charset=utf-8');
                 }
-                header("Content-Disposition: attachment; filename=" . $this->_filename . "." . $this->_extension);
+                header('Content-Disposition: attachment; filename=' . $this->_filename . '.' . $this->_extension);
                 readfile($this->_path);
             } else if ($format == 'D') {
                 if ($this->_extension == 'xlsx') {
-                    header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8");
+                    header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8');
                 } else {
-                    header("Content-type: application/vnd.ms-excel; charset=utf-8");
+                    header('Content-type: application/vnd.ms-excel; charset=utf-8');
                 }
-                header("Content-Disposition: attachment; filename=" . $this->_filename . "." . $this->_extension);
+                header('Content-Disposition: attachment; filename=' . $this->_filename . '.' . $this->_extension);
                 $writer->save('php://output');
             } else if ($format == 'L') {
                 $writer->save($this->_path);
