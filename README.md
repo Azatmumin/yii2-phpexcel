@@ -56,7 +56,7 @@ $excel->setCells([
 ]);
 
 // [skeleton]/web/export/excel-example.xlsx; // xlsx, xls
-echo $excel->Output($excel, 'export/excel-example.xlsx', 'L'); // D (Download), L (Link)
+echo $excel->Output($excel, 'export/excel-example.xlsx', 'L'); // S (Save), D (Download), L (Link)
 
 ```
 
