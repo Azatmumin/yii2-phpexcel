@@ -1,6 +1,6 @@
 {
 	"name": "drivesoftz/yii2-phpexcel",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"homepage": "http://phpexcel.codeplex.com",
 	"type": "library",
 	"description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",

@@ -2,7 +2,7 @@
 PHPExcel TH
 ============================================================
 
-Version: 1.0.0
+Version: 1.0.1
 
 Release date: 2016-03-13
 
@@ -60,4 +60,4 @@ echo $excel->Output($excel, 'export/excel-example.xlsx', 'L'); // S (Save), D (D
 
 ```
 
-<span class="right">![tcpdf-th](img/2016-02-27_10-52-00.png)</span>
+<span class="right">![yii2-phpexcel](img/2016-03-13_23-40-11.png)</span>
