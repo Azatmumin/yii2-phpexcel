@@ -24,6 +24,7 @@ Example
 use PHPExcel;
 
 $excel = new PHPExcel();
+
 $excel->setPropertie([
   'creator'     => 'Eakakbin Jaikeawma',
   'modified'    => 'Eakakbin Jaikeawma',
