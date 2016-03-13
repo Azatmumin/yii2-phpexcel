@@ -14,7 +14,7 @@ Install
 ============================================================
 
 ```
-$ composer require drivesoftz/phpexcel-th ~1.0
+$ composer require drivesoftz/yii2-phpexcel ~1.0
 ```
 
 Example 
