@@ -47,11 +47,11 @@ class PHPExcel extends PHPExcelBase {
         
     }
     
-    public function Output($obj = array(),$file = null, $format = 'D'){
+    public function Output($obj = array(), $file = null, $format = 'S'){
         if (!empty($this->getFile($file))) {
             $writer = PHPExcel_IOFactory::createWriter($obj, $this->_type); // Excel2007 (xlsx), Excel5 (xls)
-            $writer->save($this->_path);
-            if (file_exists($this->_path) && $format == 'D') {
+            if ($format == 'S') {
+                $writer->save($this->_path);
                 if ($this->_extension == 'xlsx') {
                     header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8");
                 } else {
@@ -59,7 +59,16 @@ class PHPExcel extends PHPExcelBase {
                 }
                 header("Content-Disposition: attachment; filename=" . $this->_filename . "." . $this->_extension);
                 readfile($this->_path);
-            } else if (file_exists($this->_path) && $format == 'L') {
+            } else if ($format == 'D') {
+                if ($this->_extension == 'xlsx') {
+                    header("Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=utf-8");
+                } else {
+                    header("Content-type: application/vnd.ms-excel; charset=utf-8");
+                }
+                header("Content-Disposition: attachment; filename=" . $this->_filename . "." . $this->_extension);
+                $writer->save('php://output');
+            } else if ($format == 'L') {
+                $writer->save($this->_path);
                 return '<p>Download Files: <a href="' . $this->_url . '" target="_blank">' . $this->_url . '</a></p>';
             }
         }
